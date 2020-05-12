@@ -1,0 +1,8 @@
+# Specify filepatterns you want git to ignore.
+
+/node_modules/*
+/dist/*
+helloTypeScript.sublime-project
+package-lock.json
+helloTypeScript.sublime-workspace
+.DS_Store
