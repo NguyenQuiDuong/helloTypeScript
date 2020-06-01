@@ -6,3 +6,4 @@ helloTypeScript.sublime-project
 package-lock.json
 helloTypeScript.sublime-workspace
 .DS_Store
+.vs

@@ -1,5 +1,14 @@
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+
+const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+    template: path.join(__dirname, '/index.html'),
+    filename: 'index.html',
+    inject: 'body',
+});
+
 module.exports = {
-    mode: "production",
+    mode: "development",
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
@@ -29,6 +38,13 @@ module.exports = {
         ]
     },
 
+    output: {
+        filename: 'main.js',
+        path: path.join(__dirname, '/dist'),
+    },
+
+    entry: [path.join(__dirname, '/src/index.jsx')],
+
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
     // This is important because it allows us to avoid bundling all of our
@@ -36,5 +52,7 @@ module.exports = {
     externals: {
         "react": "React",
         "react-dom": "ReactDOM"
-    }
+    },
+
+    plugins: [HTMLWebpackPluginConfig]
 };
